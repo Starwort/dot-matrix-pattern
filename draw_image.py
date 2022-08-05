@@ -1,3 +1,5 @@
+import os
+
 import click
 
 import draw_pattern
@@ -27,6 +29,7 @@ def cli(fname, draw, convert):
         print(f"Generated pattern from {fname}")
     else:
         pattern = image_to_pattern.load_image(fname)
+    os.system(f"chafa {fname+'.out.png'!r}")
     if draw:
         draw_pattern.draw(pattern)
 
